@@ -310,24 +310,3 @@ spec:
   provider:
     name: Red Hat
   version: 0.0.1
-  webhookdefinitions:
-  - admissionReviewVersions:
-    - v1
-    containerPort: 443
-    deploymentName: image-based-install-operator
-    failurePolicy: Fail
-    generateName: imageclusterinstalls.extensions.hive.openshift.io
-    rules:
-    - apiGroups:
-      - extensions.hive.openshift.io
-      apiVersions:
-      - v1alpha1
-      operations:
-      - CREATE
-      - UPDATE
-      resources:
-      - imageclusterinstalls
-    sideEffects: None
-    targetPort: 9443
-    type: ValidatingAdmissionWebhook
-    webhookPath: /validate-extensions-hive-openshift-io-v1alpha1-imageclusterinstall
